@@ -1,0 +1,20 @@
+<h1>PRODUCT_INVENTORY</h1>
+<h2>LOGIN_TEXT</h2>
+
+
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="form-group">
+      <mat-input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="model.username" name="name"
+             #name="ngModel"></mat-input>
+        <mat-input type="password" name="password" id="password" [(ngModel)]="model.pass"></mat-input>
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        Name is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Submit</button>
+
+  </form>
